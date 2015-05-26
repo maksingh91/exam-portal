@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Flama-Basic;
+    src: url(../fonts/Flama-Basic.otf);
+}
+body {
+  font-family: 'Flama-Basic', sans-serif;
+  background:;
+  position: relative;
+  font-weight:400px;
+}
+
+.header{background-color: #0075C8; color:#7fc9e9}
+
+
+
+
+
