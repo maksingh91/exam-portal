@@ -2,45 +2,37 @@
 <html>
 <head>
 <title>Exam Portal</title>
-     <meta charset="utf-8">
+<meta charset="utf-8">
 <!-- CSS (load bootstrap) -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
- 
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ui-grid-unstable.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+
 <!-- Load JS -->
-	<script src="js/angular/angular.min.js"></script>
-	<script type="text/javascript" src="js/app/app.js" ></script>
-	<script type="text/javascript" src="js/service/service.js" ></script>
+<script src="js/angular/angular.min.js"></script>
+<script src="js/angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="js/angular/angular-ui-router.js"></script>
+<script src="js/angular/angular-animate.min.js"></script>
+<script src="js/angular/angular-touch.min.js"></script>
+<script src="js/angular/ui-grid-unstable.js"></script>
+
+<script type="text/javascript" src="js/app/app.js"></script>
+<script type="text/javascript"
+	src="js/controller/createQuestionController.js"></script>
+<script type="text/javascript" src="js/controller/mainController.js"></script>
+<script type="text/javascript" src="js/service/appService.js"></script>
 </head>
 
-<body ng-app="app">
- <div ng-controller="appCtrl" class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-               <div class="well well-sm">	
-				<form role="form">
-					<div class="form-group">
-					  <label for="sel1">Heading</label>
-						  
-					</div>
-				</form>
+<body ng-app="app" ng-controller="MainCtrl">
 
-				</div>
-            </div>
+<div style="padding: 50px">
+	<div ui-view></div>
+</div>
+	<!-- <footer style="height: 5%">
+		<p>Copyright 2015 Exam_Portal - All Rights Reserved</p>
+	</footer> -->
 
-            <div class="col-md-8">
-                <div >    
-					<label for="sel1">+ Heading</label>
-					
-                </div>
-
-              
-
-        </div>
-
-    </div>
-	                
-  
 </body>
-
 </html>

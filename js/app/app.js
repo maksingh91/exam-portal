@@ -1,15 +1,38 @@
-var app = angular.module('app', []);
+// module to display provider details 
+angular.module(
+		'app',
+		[ 'ui.router', 'ui.bootstrap', 'ngTouch', 'ui.grid', 'ui.grid.pagination',
+				'ui.grid.resizeColumns', 'ui.grid.selection', 'ui.grid.autoResize']).
 
-app.controller('appCtrl', ['$scope', '$http','AppService', function($scope, $http, AppService) {
+config([ '$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise('/createQuestion');
+	$stateProvider
 
-	$scope.pageData = {};
-	
-	
-	AppService.fetchData("http://www.w3schools.com/angular/customers.php").then(function(data) {
-	console.log(JSON.stringify(data));
+	// HOME STATES AND NESTED VIEWS ========================================
+	/*.state('viewPrvdDtlPage', {
+		url : '/viewPrvdDtlPage/:prvdId',
+		views : {
+			'' : {
+				templateUrl : 'partials/viewPrvdDetail.html',
+				controller : 'ViewPrvdDetailCtrl'
+			},
+
+			'demographic@viewPrvdDtlPage' : {
+				templateUrl : 'partials/demographic.html',
+				controller : 'DemographicCtrl'
+			},
+			'clinical@viewPrvdDtlPage' : {
+				templateUrl : 'partials/clinical.html',
+				controller : 'ClinicalCtrl'
+			},
+			'watchlist@viewPrvdDtlPage' : {
+				templateUrl : 'partials/watchlist.html',
+				controller : 'WatchListCtrl'
+			}
+		}
+	})*/.state('createQuestion', {
+		url : '/createQuestion',
+		templateUrl : 'partials/createQuestion.html',
+		controller : 'CreateQuestionCtrl'
 	});
-	
-	 
-}]);
-
-
+} ]);

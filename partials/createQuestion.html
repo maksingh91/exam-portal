@@ -1,0 +1,212 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="well well-sm">
+				<form role="form">
+					<div class="form-group">
+						<label for="sel1">Header</label></br> <label for="sel1">Question</label></br>
+						<label for="sel1">Footer</label></br> <label for="sel1">General
+							Info</label>
+
+					</div>
+				</form>
+
+			</div>
+		</div>
+
+		<div class="col-md-9 well well-sm">
+			<div class="well well-sm">
+				<span class="font18"
+					ng-click="isCollapsedHeader = !isCollapsedHeader"><span
+					ng-show="isCollapsedHeader" class="font18 icon-plus"></span><span
+					ng-show="!isCollapsedHeader" class="font18 icon-minus"></span>
+					Header</span>
+				<div collapse="isCollapsedHeader">
+					</br>
+					<div class="form-group">
+						<div class="form-inline form-group">
+							<input class="form-control btn btn-default" type="button"
+								ng-click="isAdvance=false" value="Basic"> <input
+								class="form-control btn btn-default" type="button"
+								ng-click="isAdvance=true" value="Advance">
+						</div>
+
+						<form class="form-horizontal well well-lg">
+							<div class="form-group">
+								<label for="heading" class="col-sm-2 control-label">Heading</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" id="inputHeading"
+										ng-model="heading" placeholder="Heading">
+								</div>
+								<div class="col-sm-3" ng-show="isAdvance">
+									<input type="text" class="form-control" id="inputHeadingStyl"
+										ng-model="heaingStyl" placeholder="Heading Style">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="subHeading" class="col-sm-2 control-label">Sub
+									Heading</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" id="inputSubHeading"
+										ng-model="subHeading" placeholder="Sub Heading">
+								</div>
+								<div class="col-sm-3" ng-show="isAdvance">
+									<input type="text" class="form-control"
+										ng-model="subHeadingStyl" id="inputSubHeadingStyl"
+										placeholder="Sub Heading Style">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="message" class="col-sm-2 control-label">Message</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" id="inputMessage"
+										ng-model="message" placeholder="Message">
+								</div>
+								<div class="col-sm-3" ng-show="isAdvance">
+									<input type="text" class="form-control" id="inputMsgStyl"
+										ng-model="messageStyl" placeholder="Message Style">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="well well-sm">
+				<span class="font18" ng-click="isCollapsedQue = !isCollapsedQue"><span
+					ng-show="isCollapsedQue" class="font18 icon-plus"></span><span
+					ng-show="!isCollapsedQue" class="font18 icon-minus"></span>
+					Questions</span> </br>
+				<div collapse="isCollapsedQue">
+					</br>
+					<div class="form-group">
+						<div class="form-inline form-group">
+							<input class="form-control btn btn-default" type="button"
+								ng-click="isAdvance=false" value="Basic"> <input
+								class="form-control btn btn-default" type="button"
+								ng-click="isAdvance=true" value="Advance">
+						</div>
+
+						<form class="form-horizontal well well-lg">
+							<div class="form-group">
+								<label for="heading" class="col-sm-2 control-label">Question</label>
+								<div class="col-sm-7">
+									<textarea type="text" class="form-control" ng-model="question"
+										placeholder="Please Enter Question" rows="3"></textarea>
+								</div>
+								<div class="col-sm-3" ng-show="isAdvance">
+									<input type="text" class="form-control" ng-model="queStyl"
+										placeholder="Question Style">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="subHeading" class="col-sm-2 control-label">Option
+									Type</label>
+								<div class="col-sm-7">
+									<select ng-model="optionTyp" class="form-control">
+										<option value="">Please Select a Option Type</option>
+										<option value="Drop Down">Drop Down</option>
+										<option value="Text Box">Text Box</option>
+										<option value="Radio Button">Radio Button</option>
+										<option value="Check Box">Check Box</option>
+									</select>
+								</div>
+								<div class="col-sm-3" ng-show="isAdvance">
+									<input type="text" class="form-control"
+										ng-model="optionTypStyl" placeholder="Option Type Style">
+								</div>
+							</div>
+							<div class="form-group" ng-show="optionTyp!='Text Box'">
+								<label for="message" class="col-sm-2 control-label">Add
+									Options</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" ng-model="addOption"
+										placeholder="Please Enter an Option Value">
+								</div>
+								<div class="col-sm-3">
+									<input type="button" class="form-control" value="Add"
+										ng-click="addOptions(addOption)">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="message" class="col-sm-2 control-label">Correct
+									Answer</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control" ng-model="crctAnswer"
+										placeholder="Message">
+								</div>
+							</div>
+							<div class="form-inline form-group">
+								<input style="margin-right: 2%"
+									class="form-control col-sm-3 btn btn-default" type="button"
+									ng-click="" value="Save"> <input
+									style="margin-right: 2%"
+									class="form-control col-sm-3 btn btn-default" type="button"
+									ng-click="" value="Cancel"> <input
+									style="margin-right: 2%"
+									class="form-control col-sm-3 btn btn-default" type="button"
+									ng-click="" value="Delete">
+							</div>
+
+						</form>
+
+
+						<form class="well well-lg">
+							<div class="form-group">
+								<label style="{{queStyl}}">{{question}}</label>
+								<div ng-show="optionTyp=='Radio Button'"
+									ng-repeat="rBtn in addOptionValues">
+									<input type="radio" name="option" value="rBtn"><span
+										style="{{optionTypStyl}}">{{rBtn}}</span>
+								</div>
+								<div ng-show="optionTyp=='Check Box'"
+									ng-repeat="cBtn in addOptionValues">
+									<input type="checkbox" value="cBtn"><span style="{{optionTypStyl}}">{{cBtn}}</span>
+								</div>
+								<div ng-show="optionTyp=='Drop Down'">
+									<select ng-model="optionTyp">
+										<option ng-repeat="drop in addOptionValues" value={{drop}}>{{drop}}</option>
+									</select>
+								</div>
+								<div ng-show="optionTyp=='Text Box'" class="col-sm-7">
+									<input type="text" class="form-control"
+										placeholder="Enter Your Answer">
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="well well-sm form-group">
+				<span class="font18"
+					ng-click="isCollapsedFooter = !isCollapsedFooter"><span
+					ng-show="isCollapsedFooter" class="font18 icon-plus"></span><span
+					ng-show="!isCollapsedFooter" class="font18 icon-minus"></span>
+					Footer</span> </br>
+				<div collapse="isCollapsedFooter">
+					</br> <input class="form-control " type="text" ng-model="footer"
+						placeholder="Please Enter Footer">
+				</div>
+			</div>
+
+
+			<div class="well well-sm form-group">
+				<span class="font18"
+					ng-click="isCollapsedGnrlInfo = !isCollapsedGnrlInfo"><span
+					ng-show="isCollapsedGnrlInfo" class="font18 icon-plus"></span><span
+					ng-show="!isCollapsedGnrlInfo" class="font18 icon-minus"></span>
+					General Info</span> </br>
+				<div collapse="isCollapsedGnrlInfo">
+					</br>
+					<textarea class="form-control" ng-model="gnrlInfo"
+						placeholder="Please Enter General Info" rows="3"></textarea>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
